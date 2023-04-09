@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Kalkutaror walut</title>
+</head>
+<body>
+ <form method="post">
+  <div>
+    <label for="codes">Wybierz walute</label>
+    <select name="codes" id="codes">
+        {% for rate in rates %}
+        <option value="{{rate.code}}">{{rate.currency}}</option>
+        {% endfor %}
+    </select>
+    <br/>
+    <br/>
+    <label for="amount">Wprowadź ilość</label>
+    <input type="text" id="amount" name="amount"/>
+    <br/>
+    <br/>
+    <input type="submit" value="Przelicz"/>
+    <p>Wartość w PLN {{result}}</p>
+    </div>
+</form>
+</body>
+</html>
